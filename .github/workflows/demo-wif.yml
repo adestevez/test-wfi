@@ -26,8 +26,9 @@ jobs:
       uses: 'google-github-actions/auth@v1'
       with:
         token_format: 'access_token'
-        workload_identity_provider:  ${{ secrets.WORKLOAD_IDENTITY_PROVIDER_ID }}
+        workload_identity_provider: 'principalSet://iam.googleapis.com/projects/github-wfi/locations/global/workloadIdentityPools/dev-github-wif-pool'
         service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
 
     # List the instances in the project
     - name: List Instances
